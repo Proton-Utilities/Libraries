@@ -21,7 +21,6 @@ ProFunction.SecureGui = function(properties)
 	local gui = Instance.new("ScreenGui")
 
 	local parent = (gethui and gethui() 
-		or cloneref and cloneref(ProFunction.GetService("CoreGui")) 
 		or ProFunction.GetService("CoreGui")
 	)
 
