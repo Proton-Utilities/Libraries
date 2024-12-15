@@ -20,7 +20,7 @@ end
 ProFunction.SecureGui = function(properties)
 	local gui = Instance.new("ScreenGui")
 
-	local parent = (gethui and gethui() or ProFunction.GetService("CoreGui"))
+	local parent = (gethui and gethui() or ProFunction.SecureService("CoreGui"))
 
 	gui.Parent = parent
 
