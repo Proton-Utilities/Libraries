@@ -16,13 +16,11 @@ ProFunction.SecureService = function(service)
 	return cloneref and cloneref(game:GetService(service)) or game:GetService(service)
 end
 
--- Creates a new GUI with selected properties, and attempts to securely parent to gethui or CoreGui.
+-- Creates a new secure GUI with the selected properties
 ProFunction.SecureGui = function(properties)
-	local gui = Instance.new("ScreenGui")
-
 	local parent = (gethui and gethui() or ProFunction.SecureService("CoreGui"))
 
-	gui.Parent = parent
+	local gui = Instance.new("ScreenGui", parent)
 
 	for property, value in pairs(properties) do
 		pcall(function()
