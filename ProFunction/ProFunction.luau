@@ -16,7 +16,7 @@ ProFunction.SecureService = function(service)
 	return cloneref and cloneref(game:GetService(service)) or game:GetService(service)
 end
 
--- Creates a new secure GUI with the selected properties
+-- Creates a new secure GUI with the selected properties.
 ProFunction.SecureGui = function(properties)
 	local parent = (gethui and gethui() or ProFunction.SecureService("CoreGui"))
 
