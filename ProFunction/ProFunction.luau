@@ -16,19 +16,24 @@ ProFunction.SecureService = function(service)
 	return cloneref and cloneref(game:GetService(service)) or game:GetService(service)
 end
 
--- Creates a new secure GUI with the selected properties.
-ProFunction.SecureGui = function(properties)
+-- Creates a new secure GUI with the selected properties. (Or parents a given gui)
+ProFunction.SecureGui = function(properties, oldGui)
 	local parent = (gethui and gethui() or ProFunction.SecureService("CoreGui"))
-
-	local gui = Instance.new("ScreenGui", parent)
-
-	for property, value in pairs(properties) do
-		pcall(function()
-			gui[property] = value
-		end)
+	if oldGui then
+		oldGui.Parent = parent
 	end
 
-	return gui
+	local gui = oldGui or Instance.new("ScreenGui", parent)
+
+	if not oldGui then
+		for property, value in pairs(properties) do
+			pcall(function()
+				gui[property] = value
+			end)
+		end
+	end
+
+	return oldGui and nil or gui
 end
 
 -- Spawns a function with the given arguments. Good for modules.
