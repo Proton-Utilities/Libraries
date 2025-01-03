@@ -13,7 +13,7 @@ local ProFunction = {}
 
 -- Attempts to securely get a game service using cloneref.
 ProFunction.SecureService = function(service)
-	return gethui and gethui() or cloneref and cloneref(game:GetService(service)) or game:GetService(service)
+	return cloneref and cloneref(game:GetService(service)) or game:GetService(service)
 end
 
 -- Creates a new secure GUI with the selected properties. (Or parents a given gui)
