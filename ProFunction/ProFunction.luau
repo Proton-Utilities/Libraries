@@ -6,7 +6,7 @@
     @description
         Premade function library
 
-    Copyright ©2020-2024 Proton Utilities All Rights Reserved
+    Copyright ©2020-2025 Proton Utilities All Rights Reserved
 ]]
 
 local ProFunction = {}
