@@ -21,6 +21,7 @@ ProFunction.SecureGui = function(properties, oldGui)
 	local parent = (gethui and gethui() or ProFunction.SecureService("CoreGui"))
 	if oldGui then
 		oldGui.Parent = parent
+		return
 	end
 
 	local gui = oldGui or Instance.new("ScreenGui", parent)
@@ -33,7 +34,7 @@ ProFunction.SecureGui = function(properties, oldGui)
 		end
 	end
 
-	return oldGui and nil or gui
+	return gui
 end
 
 -- Spawns a function with the given arguments. Good for modules.
